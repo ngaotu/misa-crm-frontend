@@ -53,16 +53,26 @@
                     <!-- Row 1 -->
                     <div class="form-row">
                         <div class="form-col col-6">
-                            <MsInput v-model="customerCode" label="Mã khách hàng" :disabled="true"
+                            <MsInput ref="firstInputRef" v-model="customerCode" label="Mã khách hàng" :disabled="true"
                                 :error-message="errors.customerCode" />
                         </div>
                         <div class="form-col col-6">
                             <MsInput v-model="customerFullName" label="Tên khách hàng" :required="true"
-                                :error-message="errors.customerFullName" :autofocus="true" />
+                                :error-message="errors.customerFullName" :autofocus="true" @blur="onFullNameBlur" />
                         </div>
                     </div>
-
                     <!-- Row 2 -->
+                    <div class="form-row">
+                        <div class="form-col col-6">
+                            <MsInput v-model="customerPhone" label="Điện thoại" type="tel"
+                                :error-message="errors.customerPhone" @blur="onPhoneBlur" />
+                        </div>
+                        <div class="form-col col-6">
+                            <MsInput v-model="customerEmail" label="Email" type="email"
+                                :error-message="errors.customerEmail" @blur="onEmailBlur" />
+                        </div>
+                    </div>
+                    <!-- Row 3 -->
                     <div class="form-row">
                         <div class="form-col col-6">
                             <MsInput v-model="customerTaxCode" label="Mã số thuế"
@@ -75,17 +85,7 @@
                         </div>
                     </div>
 
-                    <!-- Row 3 -->
-                    <div class="form-row">
-                        <div class="form-col col-6">
-                            <MsInput v-model="customerPhone" label="Điện thoại" type="tel"
-                                :error-message="errors.customerPhone"/>
-                        </div>
-                        <div class="form-col col-6">
-                            <MsInput v-model="customerEmail" label="Email" type="email"
-                                :error-message="errors.customerEmail" />
-                        </div>
-                    </div>
+
 
                     <!-- Row 4 -->
                     <div class="form-row">
@@ -134,9 +134,13 @@
                             </template>
                         </div>
                         <div class="avatar-modal-actions">
-                            <MsButton v-if="avatarPreview" variant="outline" @click="removeAvatarPreview" class="custom-toolbar-btn">Xóa</MsButton>
-                            <MsButton variant="outline" @click="showAvatarModal = false" class="custom-toolbar-btn">Đóng</MsButton>
-                            <MsButton variant="primary" :disabled="!avatarFile" @click="saveAvatarPreview" class="custom-toolbar-btn">Lưu
+                            <MsButton v-if="avatarPreview" variant="outline" @click="removeAvatarPreview"
+                                class="custom-toolbar-btn">Xóa
+                            </MsButton>
+                            <MsButton variant="outline" @click="showAvatarModal = false" class="custom-toolbar-btn">Đóng
+                            </MsButton>
+                            <MsButton variant="primary" :disabled="!avatarFile" @click="saveAvatarPreview"
+                                class="custom-toolbar-btn">Lưu
                             </MsButton>
                         </div>
                     </div>
@@ -148,7 +152,7 @@
 
 <script setup>
 
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, computed, watch, useTemplateRef, nextTick } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useForm, useField } from 'vee-validate';
 import { useToastNotification } from '@/composables/useToast.js';
@@ -165,29 +169,58 @@ const router = useRouter();
 const route = useRoute();
 const customerAPI = new CustomerAPI();
 const { showSuccess, showError } = useToastNotification();
-
+const firstInputRef = useTemplateRef('firstInputRef');
 // Setup vee-validate form
 const formContext = useForm({
     validationSchema: customerSchema,
-    validateOnMount: false,
-    validateOnChange: false,
-    validateOnBlur: true
+
 });
 const { handleSubmit, errors, resetForm: resetVeeForm } = formContext;
 
 // Define form fields với useField
 const { value: customerCode } = useField('customerCode');
-const { value: customerFullName } = useField('customerFullName');
+const { value: customerFullName, handleBlur: markFullNameTouched, 
+    validate: validateCustomerFullName } = useField('customerFullName', customerSchema.customerFullName, {
+    validateOnValueUpdate: false, validateOnBlur: true,
+});
 const { value: customerType } = useField('customerType');
 const { value: customerTaxCode } = useField('customerTaxCode');
-const { value: customerPhone } = useField('customerPhone');
-const { value: customerEmail } = useField('customerEmail');
+// const { value: customerPhone } = useField('customerPhone');
+const { value: customerPhone, handleBlur: markPhoneTouched,
+        validate: validateCustomerPhone } = useField('customerPhone', customerSchema.customerPhone, {
+        validateOnValueUpdate: false, validateOnBlur: true,
+});
+const { value: customerEmail, handleBlur: markEmailTouched, 
+    validate: validateCustomerEmail } = useField('customerEmail', customerSchema.customerEmail, {
+    validateOnValueUpdate: false, validateOnBlur: true,
+});
 const { value: customerShippingAddr } = useField('customerShippingAddr');
 const { value: customerLastPurchaseDate } = useField('customerLastPurchaseDate');
 const { value: customerPurchasedItems } = useField('customerPurchasedItems');
 const { value: customerLastestPurchasedItems } = useField('customerLastestPurchasedItems');
 
+/**
+ * Xử lý blur tên khách hàng
+ */
+const onFullNameBlur = () => {
+    markFullNameTouched();
+    validateCustomerFullName(); 
+};
 
+/**
+ * Xử lý blur số điện thoại
+ */
+const onPhoneBlur = () => {
+    markPhoneTouched();
+    validateCustomerPhone();
+};
+/**
+ * Xử lý blur email
+ */
+const onEmailBlur = () => {
+    markEmailTouched();
+    validateCustomerEmail();
+};
 // Customer type options
 const customerTypeOptions = [
     { value: 'NBH01', label: 'NBH01' },
@@ -245,10 +278,10 @@ async function fetchCustomerDetail() {
         const res = await customerAPI.getById(customerId.value);
         if (res && res.data) {
             resetVeeForm({ values: convertEmptyStringsToNull(res.data) });
-            if (res.data.customerAvatar){
+            if (res.data.customerAvatar) {
                 customerAvatar.value = res.data.customerAvatar.startsWith('/')
-                        ? `${import.meta.env.VITE_IMAGE_URL}${res.data.customerAvatar}`
-                        : res.data.customerAvatar;
+                    ? `${import.meta.env.VITE_IMAGE_URL}${res.data.customerAvatar}`
+                    : res.data.customerAvatar;
             }
         }
     } catch (err) {
@@ -476,13 +509,24 @@ function saveAvatarPreview() {
         showAvatarModal.value = false;
     }
 }
-
+/**
+ * Thiết lập focus cho trường đầu tiên khi component được mount
+ * Author: NTT (19/11/2025)
+ */
+const setFocus = () => {
+    nextTick(() => {
+        console.log('Focus called');
+        firstInputRef.value?.focus();
+    });
+};
 onMounted(() => {
     if (isEditMode.value) {
         fetchCustomerDetail();
     } else {
         generateCustomerCode();
     }
+    // Dùng nextTick để đảm bảo DOM đã render xong hoàn toàn (tránh lỗi trên một số trình duyệt)
+    setFocus();
 });
 watch(customerId, (newId, oldId) => {
     if (newId) {
@@ -490,6 +534,7 @@ watch(customerId, (newId, oldId) => {
     } else {
         resetForm();
     }
+    // setFocus();
 });
 
 
@@ -617,7 +662,7 @@ watch(customerId, (newId, oldId) => {
 .avatar-dropzone-or {
     margin-bottom: 10px;
     font-size: 13px;
-    font-weight: 400 ;
+    font-weight: 400;
 }
 
 .avatar-preview-rect {
@@ -726,7 +771,7 @@ watch(customerId, (newId, oldId) => {
     object-fit: cover;
     cursor: pointer;
     border: 1px solid var(--border-color);
-     image-rendering: auto;
+    image-rendering: auto;
     image-rendering: crisp-edges;
     image-rendering: -webkit-optimize-contrast;
 }

@@ -1,9 +1,9 @@
 # misa-vue
 
-Quản lý khách hàng với Vue 3, Vite, VeeValidate
 
 ## Giới thiệu
-Dự án misa-vue là hệ thống quản lý khách hàng dành cho doanh nghiệp vừa và nhỏ
+
+Quản lý khách hàng với Vue 3, Vite, VeeValidate
 
 ## Tính năng chi tiết
 - **Quản lý danh sách khách hàng:**
@@ -22,18 +22,12 @@ Dự án misa-vue là hệ thống quản lý khách hàng dành cho doanh nghi�
 - **Thông báo & UX:**
   - Toast thông báo thành công/thất bại, cảnh báo nhập liệu.
   - Component tuỳ chỉnh: MsTable (bảng), MsInput (input), MsSelect (select), MsDatePicker (chọn ngày), MsModal (modal), MsButton (nút bấm).
-- **Kiểm thử & chất lượng:**
-  - Unit test với Vitest cho các hàm logic, component.
-  - E2E test với Playwright cho luồng nhập liệu, import, validate.
+
 
 ## Công nghệ sử dụng
 - **Vue 3** (Composition API, SFC)
 - **Vite** (build nhanh, HMR)
 - **VeeValidate + Yup** (validate form, async check)
-- **Playwright** (kiểm thử end-to-end)
-- **Vitest** (unit test)
-- **Pinia** (state management)
-- **SCSS/CSS** (tối ưu UI)
 
 ## Cấu trúc thư mục
 ```
@@ -68,15 +62,6 @@ src/
    ```
 4. Truy cập: http://localhost:5173
 
-## Kiểm thử
-- Chạy unit test:
-  ```sh
-  npm run test
-  ```
-- Chạy E2E test:
-  ```sh
-  npm run test:e2e
-  ```
 
 ## Đóng góp
 - Fork repo, tạo branch mới, gửi PR về master.
