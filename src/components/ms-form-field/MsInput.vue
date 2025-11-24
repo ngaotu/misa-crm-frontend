@@ -14,6 +14,7 @@
         :class="['input-field', { error: hasError }]"
         :autofocus="autofocus"
         :disabled="disabled"
+        @blur="$emit('blur', $event)"
       />
       <span v-if="errorMessage" class="error-message">{{ errorMessage }}</span>
     </div>
@@ -22,15 +23,16 @@
 
 <script setup>
 import { computed, ref, useTemplateRef } from "vue";
+const emit = defineEmits(['blur']);
 const modelValue = defineModel({
   type: [String, Number],
   default: "",
 });
-const inPutRef = useTemplateRef('inputRef');
+const inputRef = useTemplateRef('inputRef');
 
 defineExpose({
   focus: () => {
-    inPutRef.value?.focus();
+    inputRef.value?.focus();
   },
 });
 
