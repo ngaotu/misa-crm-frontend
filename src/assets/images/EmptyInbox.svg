@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="920" viewBox="0 0 320 920">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#dadce3"/>
+      <stop offset="1" stop-color="#99a1b2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e2e4e9"/>
+      <stop offset="1" stop-color="#d3d7de"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-11" x1="0.586" y1="0.04" x2="0.586" y2="1.019" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eff1f6"/>
+      <stop offset="1" stop-color="#dadce3"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-12" x1="-0.189" y1="0.5" x2="1.218" y2="0.5" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-13" x1="-0.375" y1="0.5" x2="1.613" y2="0.5" xlink:href="#linear-gradient"/>
+    <clipPath id="clip-Icon_Empty">
+      <rect width="320" height="920"/>
+    </clipPath>
+  </defs>
+  <g id="Icon_Empty" clip-path="url(#clip-Icon_Empty)">
+    <g id="Chart-line_1" data-name="Chart-line#1" transform="translate(80)">
+      <g id="Group_32350" data-name="Group 32350">
+        <g id="Stockholm-icons-_-Shopping-_-Chart-line_1" data-name="Stockholm-icons-/-Shopping-/-Chart-line#1">
+          <path id="bound" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+          <path id="Path-95" d="M6.333,29.667h25a1.667,1.667,0,0,1,0,3.333H4.667A1.667,1.667,0,0,1,3,31.333V4.667a1.667,1.667,0,1,1,3.333,0Z" transform="translate(2 2)" fill="url(#linear-gradient)"/>
+          <path id="Path-97" d="M9.884,20.14A1.667,1.667,0,0,1,7.45,17.86l6.25-6.667a1.667,1.667,0,0,1,2.3-.128l4.932,4.21,6.427-8.142A1.667,1.667,0,1,1,29.975,9.2l-7.5,9.5a1.667,1.667,0,0,1-2.39.233l-5.04-4.3Z" transform="translate(4.666 4.333)" fill="url(#linear-gradient-2)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Chart-bar_2" data-name="Chart-bar#2" transform="translate(120)">
+      <g id="Group_32351" data-name="Group 32351">
+        <g id="Stockholm-icons-_-Shopping-_-Chart-bar_2" data-name="Stockholm-icons-/-Shopping-/-Chart-bar#2">
+          <path id="bound-2" data-name="bound" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+          <rect id="Rectangle-62-Copy" width="5" height="21.667" rx="1.5" transform="translate(28.333 6.667)" fill="url(#linear-gradient-2)"/>
+          <rect id="Rectangle-62-Copy-2" width="5" height="13.333" rx="1.5" transform="translate(20 15)" fill="url(#linear-gradient-2)"/>
+          <path id="Path-95-2" data-name="Path-95" d="M6.333,29.667h25a1.667,1.667,0,0,1,0,3.333H4.667A1.667,1.667,0,0,1,3,31.333V4.667a1.667,1.667,0,1,1,3.333,0Z" transform="translate(2 2)" fill="url(#linear-gradient)"/>
+          <rect id="Rectangle-62-Copy-4" width="5" height="10" rx="1.5" transform="translate(11.667 18.333)" fill="url(#linear-gradient-2)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Search" transform="translate(160)">
+      <g id="Group_32518" data-name="Group 32518">
+        <g id="Stockholm-icons-_-General-_-Search" data-name="Stockholm-icons-/-General-/-Search">
+          <path id="bound-3" data-name="bound" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+          <path id="Path-2" d="M14.488,17.845a1.667,1.667,0,1,1,2.357-2.357l6.666,6.667a1.667,1.667,0,1,1-2.357,2.357Z" transform="translate(9.333 10)" fill="url(#linear-gradient-2)"/>
+          <path id="Path" d="M15.667,24a8.333,8.333,0,1,0-8.333-8.333A8.333,8.333,0,0,0,15.667,24Zm0,3.333A11.667,11.667,0,1,1,27.333,15.667,11.667,11.667,0,0,1,15.667,27.333Z" transform="translate(2.667 2.667)" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+    <g id="chart-pie" transform="translate(40)">
+      <g id="Group_32349" data-name="Group 32349">
+        <g id="Stockholm-icons-_-Shopping-_-Chart-pie" data-name="Stockholm-icons-/-Shopping-/-Chart-pie">
+          <path id="bound-4" data-name="bound" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+          <path id="Combined-Shape" d="M4,19.584l17.163,3.433V4.062A15.26,15.26,0,1,1,4,19.583Z" transform="translate(0.857 0.917)" fill-rule="evenodd" fill="url(#linear-gradient-2)"/>
+          <path id="Combined-Shape-Copy" d="M3.06,16.375A15.261,15.261,0,0,1,18.2,3V19.4Z" transform="translate(0.002 -0.046)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_32899" data-name="Group 32899" transform="translate(-922 -143)">
+      <g id="File" transform="translate(922 143)">
+        <g id="Group_32185" data-name="Group 32185">
+          <g id="Stockholm-icons-_-Files-_-File" data-name="Stockholm-icons-/-Files-/-File">
+            <path id="Shape" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+            <path id="Combined-Shape-2" data-name="Combined-Shape" d="M7.095,2H20.228a2.5,2.5,0,0,1,1.613.592l7.94,6.715a2.5,2.5,0,0,1,.885,1.908V32.138c0,2.983-.033,3.2-3.095,3.2H7.095c-3.062,0-3.095-.21-3.095-3.2V5.195C4,2.212,4.033,2,7.095,2Z" transform="translate(2.667 1.333)" fill="url(#linear-gradient-11)"/>
+            <rect id="Rectangle" width="15" height="3.333" rx="1" transform="translate(10 18.333)" fill="url(#linear-gradient-12)"/>
+            <rect id="Rectangle-Copy" width="8.333" height="3.333" rx="1" transform="translate(10 25)" fill="url(#linear-gradient-13)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Group_32901" data-name="Group 32901" transform="translate(-922 -103)">
+      <g id="File-2" data-name="File" transform="translate(922 143)">
+        <g id="Group_32185-2" data-name="Group 32185">
+          <g id="Stockholm-icons-_-Files-_-File-2" data-name="Stockholm-icons-/-Files-/-File">
+            <path id="Shape-2" data-name="Shape" d="M0,0H80V80H0Z" fill="none" fill-rule="evenodd"/>
+            <path id="Combined-Shape-3" data-name="Combined-Shape" d="M10.19,2H36.457a5,5,0,0,1,3.227,1.183l15.88,13.43a5,5,0,0,1,1.77,3.817V62.277c0,5.967-.067,6.39-6.19,6.39H10.19c-6.123,0-6.19-.42-6.19-6.39V8.39C4,2.423,4.067,2,10.19,2Z" transform="translate(9.333 4.667)" fill="url(#linear-gradient-11)"/>
+            <rect id="Rectangle-2" data-name="Rectangle" width="30" height="6.667" rx="1" transform="translate(20 36.667)" fill="url(#linear-gradient-12)"/>
+            <rect id="Rectangle-Copy-2" data-name="Rectangle-Copy" width="16.667" height="6.667" rx="1" transform="translate(20 50)" fill="url(#linear-gradient-13)"/>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Gift" transform="translate(200)">
+      <g id="Group_32900" data-name="Group 32900">
+        <g id="Stockholm-icons-_-Shopping-_-Gift" data-name="Stockholm-icons-/-Shopping-/-Gift">
+          <path id="bound-5" data-name="bound" d="M0,0H40V40H0Z" fill="none" fill-rule="evenodd"/>
+          <path id="Combined-Shape-4" data-name="Combined-Shape" d="M4.667,6H31.333A1.667,1.667,0,0,1,33,7.667V9.333A1.667,1.667,0,0,1,31.333,11H4.667A1.667,1.667,0,0,1,3,9.333V7.667A1.667,1.667,0,0,1,4.667,6Zm1.667,8.333h8.333A1.667,1.667,0,0,1,16.333,16V27.667a1.667,1.667,0,0,1-1.667,1.667H6.333a1.667,1.667,0,0,1-1.667-1.667V16A1.667,1.667,0,0,1,6.333,14.333Zm15,0h8.333A1.667,1.667,0,0,1,31.333,16V27.667a1.667,1.667,0,0,1-1.667,1.667H21.333a1.667,1.667,0,0,1-1.667-1.667V16A1.667,1.667,0,0,1,21.333,14.333Z" transform="translate(2 4)" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+          <path id="Path-31" d="M18.742,2.28a1.667,1.667,0,1,1,1.85,2.773L14.667,9,8.742,5.053a1.667,1.667,0,1,1,1.85-2.773L14.667,5,18.742,2.28Z" transform="translate(5.333 1.333)" fill="url(#linear-gradient-2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
