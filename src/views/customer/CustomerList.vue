@@ -257,12 +257,18 @@ const tableFields = [
         key: 'customerShippingAddr', 
         label: 'Địa chỉ (Giao hàng)',
         type: 'text',
-        width: 150
+        width: 200
     },
     { 
         key: 'customerPhone', 
         label: 'Điện thoại',
         type: 'custom',
+        width: 150
+    },
+    { 
+        key: 'customerEmail',
+        label: 'Email',
+        type: 'text',
         width: 150
     },
     { 
@@ -281,7 +287,7 @@ const tableFields = [
         key: 'customerLastestPurchasedItems', 
         label: 'Tên hàng hóa đã mua',
         type: 'text',
-        width: 150
+        width: 200
     },
     // { 
     //     key: 'customerEmail
@@ -581,7 +587,7 @@ onMounted(() => {
 .toolbar {
     min-height: var(--toolbar-height);
     max-height: var(--toolbar-height);
-    padding: 12px 20px;
+    padding: 0px 16px;
     background: #e2e4e9;
     border-bottom: 1px solid var(--border-secondary);
     gap: 16px;

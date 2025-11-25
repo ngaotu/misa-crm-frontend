@@ -63,14 +63,13 @@ import { ref } from "vue";
   height: var(--header-height);
   background-color: var(--white-color);
   /* border-bottom: 1px solid #e5e7eb; */
-  padding: 0 20px;
+  padding: 0px 16px 0px 48px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 10;
 }
-.header-left{
-  padding-left: 20px;
-}
+
+
 .header-brand {
   gap: 12px;
 }

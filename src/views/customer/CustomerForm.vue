@@ -53,11 +53,11 @@
                     <!-- Row 1 -->
                     <div class="form-row">
                         <div class="form-col col-6">
-                            <MsInput ref="firstInputRef" v-model="customerCode" label="Mã khách hàng" :disabled="true"
+                            <MsInput v-model="customerCode" label="Mã khách hàng" :disabled="true"
                                 :error-message="errors.customerCode" />
                         </div>
                         <div class="form-col col-6">
-                            <MsInput v-model="customerFullName" label="Tên khách hàng" :required="true"
+                            <MsInput  ref="firstInputRef" v-model="customerFullName" label="Tên khách hàng" :required="true"
                                 :error-message="errors.customerFullName" :autofocus="true" @blur="onFullNameBlur" />
                         </div>
                     </div>
@@ -518,6 +518,7 @@ const setFocus = () => {
         console.log('Focus called');
         firstInputRef.value?.focus();
     });
+    
 };
 onMounted(() => {
     if (isEditMode.value) {
@@ -525,7 +526,6 @@ onMounted(() => {
     } else {
         generateCustomerCode();
     }
-    // Dùng nextTick để đảm bảo DOM đã render xong hoàn toàn (tránh lỗi trên một số trình duyệt)
     setFocus();
 });
 watch(customerId, (newId, oldId) => {

@@ -643,15 +643,15 @@ const goToPage = (page) => {
   user-select: none;
 }
 
-.ms-table th.sorted {
+/* .ms-table th.sorted {
   background-color: #d0e7ff;
-}
+} */
 
 .th-content {
   display: flex;
   align-items: center;
-  gap: 8px;
-  justify-content: space-between;
+  gap: 4px;
+  /* justify-content: space-between; */
   width: 100%;
 }
 
@@ -917,7 +917,7 @@ const goToPage = (page) => {
   position: fixed;
   width: 200px;
   background: #fff;
-  border: 1px solid #d0d5dd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   z-index: 1001;
@@ -946,7 +946,7 @@ const goToPage = (page) => {
   flex-shrink: 0;
 }
 
-.sort-option.sort-clear {
-  border-top: 1px solid #e5e7eb;
-}
+/* .sort-option.sort-clear {
+  border-top: 1px solid var(--border-color);
+} */
 </style>
