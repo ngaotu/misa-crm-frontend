@@ -258,6 +258,7 @@ const resetForm = () => {
     avatarFile.value = null;
     avatarPreview.value = null;
     generateCustomerCode();
+    setFocus();
 };
 
 /**

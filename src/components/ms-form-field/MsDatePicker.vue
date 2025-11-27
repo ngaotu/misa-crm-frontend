@@ -349,11 +349,15 @@ const hasError = computed(() => !!props.errorMessage);
   font-weight: 700;
 }
 .dp__calendar_header_item{
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 13px;
   padding: 1px 0 6px;
   text-align: center;
   text-transform: uppercase;
   height: auto;
+}
+.dp__cell_inner {
+  font-size: 13px !important;
+  font-weight: 500;
 }
 </style>

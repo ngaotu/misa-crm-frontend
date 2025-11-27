@@ -224,8 +224,8 @@ async function importFile() {
       };
       errorRows.value = (res.data.errors || []).map(e => {
         // Xóa dấu phẩy ở đầu cho phone, taxCode
-        const phone = e.originalRow?.phone ? String(e.originalRow.phone).replace(/^,/, '') : '-';
-        const taxCode = e.originalRow?.taxCode ? String(e.originalRow.taxCode).replace(/^,/, '') : '-';
+        const phone = e.originalRow?.phone ? String(e.originalRow.phone).replace(/^'/, '') : '-';
+        const taxCode = e.originalRow?.taxCode ? String(e.originalRow.taxCode).replace(/^'/, '') : '-';
         return {
           rowNumber: e.rowNumber,
           errorMessage: e.errorMessage,

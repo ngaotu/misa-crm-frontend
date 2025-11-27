@@ -153,7 +153,7 @@
         <!-- Modal bulk gán loại khách hàng -->
         <MsModal v-model="showBulkAssignTypeModal">
             <div class="pt-6 flex flex-row items-center">
-                <div class="" style="font-size: 13px; font-weight: 600; width: 50%;">Loại khách hàng</div>
+                <div class="" style="font-size: 13px; font-weight: 500; width: 50%;">Loại khách hàng</div>
                 <MsSelect v-model="bulkAssignType" :options="customerTypeOptions"  />
             </div>
             <div class="flex flex-row justify-end gap-8 pt-6">
@@ -265,12 +265,12 @@ const tableFields = [
         type: 'custom',
         width: 150
     },
-    { 
-        key: 'customerEmail',
-        label: 'Email',
-        type: 'text',
-        width: 150
-    },
+    // { 
+    //     key: 'customerEmail',
+    //     label: 'Email',
+    //     type: 'text',
+    //     width: 150
+    // },
     { 
         key: 'customerLastPurchaseDate', 
         label: 'Ngày mua hàng gần nhất',
