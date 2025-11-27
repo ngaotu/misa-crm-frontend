@@ -9,7 +9,7 @@ import BaseAPI from '../base/baseAPI';
 class CustomerAPI extends BaseAPI {
   constructor() {
     super();
-    this.endpoint = '/Customer';
+    this.endpoint = '/Customers';
   }
 
   /**
